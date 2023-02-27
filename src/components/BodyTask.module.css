@@ -1,3 +1,56 @@
+.taskBox{
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+    margin-top: -1.688rem;
+}
+
+.inputTask{
+    width: 39rem;
+    padding: 1rem 0 1rem 1rem;
+    border: none;
+
+    margin-right: 0.5rem;
+
+    background: var(--gray-500);
+
+    color: var(--gray-100);
+
+    border-radius: 8px;
+}
+
+.button{
+    padding: 1rem;
+    font-weight: bold;
+    font-size: 0.875rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 0.5rem;
+
+    border-radius: 8px;
+    background: var(--blue-500);
+    color: var(--gray-100);
+
+    border: none;
+
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.button:hover{
+    background: var(--blue-300)
+}
+
+.button:focus{
+    box-shadow: none;
+}
+
 
 .task{
     display: flex;
@@ -13,6 +66,8 @@
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
+
+    margin-bottom: .75rem;
 }
 
 .createTask{
@@ -53,26 +108,78 @@
     color: var(--gray-200);
 }
 
-.taskList{
-    width: 45rem;
 
-    margin-top: 1.563rem;
-    border-top: 1px solid var(--gray-400);
-    border-radius: 8px;
+.list{
+    width: 45rem;
+    padding: 1rem;
     
+    padding-top: 1rem;
+    margin-top: 0.75rem;
+
+    background: var(--gray-500);
 
     display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+    align-items: flex-start;
 
+    border-radius: 8px;
+}
+
+/* checkbox */
+
+.list input[type="checkbox"]{
+    appearance: none;
+
+    width: 1.063rem;
+    height: 1.063rem;
+
+    border: 2px solid var(--blue-300);
+    border-radius: 999px;
+
+    cursor: pointer;
+}
+
+.list input[type="checkbox"]:focus{
+    box-shadow: none;
+}
+
+.list input[type="checkbox"]:checked{
+    background: var(--purple-500);
+    border: solid 2px solid var(--purple-500);
+}
+
+.list input[type="checkbox"]:checked:before{
+    content: "";
+    width: 0.938rem;
+    height: 0.938rem;
+    background-image: url('../assets/Check.svg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    display: inline-block;
+    padding-inline: 0.068rem;
+    padding-top: 0.23rem;
+}
+
+/* task */
+
+.list > p{
+    width: 39.5rem;
+ 
+    font-size: 0.875rem;
+    color: var(--gray-100);
+    margin-left: 0.75rem
+}
+
+/* icon trash */
+
+.list .trash{
     color: var(--gray-300);
+    cursor: pointer;
 }
 
-.taskList > img{
-    margin-top: 4rem;
-}
 
-.taskList > article{
-    margin-top: 1rem;
+
+
+.list input[type="checkbox"]:checked + p {
+    text-decoration: line-through;
+    color: var(--gray-300);
 }

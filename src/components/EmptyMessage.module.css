@@ -1,0 +1,23 @@
+.taskList{
+    width: 45rem;
+
+    margin-top: 1.563rem;
+    border-top: 1px solid var(--gray-400);
+    border-radius: 8px;
+    
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    color: var(--gray-300);
+}
+
+.taskList > img{
+    margin-top: 4rem;
+}
+
+.taskList > article{
+    margin-top: 1rem;
+}
