@@ -163,10 +163,11 @@
 
 .list > p{
     width: 39.5rem;
- 
+    word-wrap: break-word;
     font-size: 0.875rem;
     color: var(--gray-100);
-    margin-left: 0.75rem
+    margin-left: 0.75rem;
+
 }
 
 /* icon trash */
@@ -174,6 +175,7 @@
 .list .trash{
     color: var(--gray-300);
     cursor: pointer;
+
 }
 
 
@@ -182,4 +184,27 @@
 .list input[type="checkbox"]:checked + p {
     text-decoration: line-through;
     color: var(--gray-300);
+}
+
+
+@media (max-width: 768px) {
+
+    .task{
+        padding: 0 2rem;
+    }
+
+    .taskInfo{
+        width: 100%;
+        flex-wrap: nowrap;
+    }
+
+    .list{
+        width: 100%;
+        flex-wrap: nowrap;
+
+    }
+
+    .list input[type="checkbox"]{
+        display: inline-block;
+    }
 }

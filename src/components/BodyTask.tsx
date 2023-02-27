@@ -11,6 +11,9 @@ import styles from './BodyTask.module.css'
 
 
 export function BodyTask(){
+
+  // States
+  
   const [userTyping, setUserTyping] = useState("");
 
   const [listTask, setListTask] = useState([
@@ -89,33 +92,44 @@ const doneTaskes = useMemo(() => {
               onClick={handleAddNewTask}
               >
                   Criar
-                  <PlusCircle weight='bold' size={16} />
+                  <PlusCircle 
+                    weight='bold' 
+                    size={16} 
+                  />
           </button>
         </form>
 
         <div className={styles.task}>
+
           <div className={styles.taskInfo}>
             <p className={styles.createTask}>Tarefas criadas <span>{listTask.length}</span></p>
             <p className={styles.doneTask}>Concluídas <span>{doneTaskes.length} de {listTask.length}</span></p>
           </div>
-       {
-          
 
-          listTask.length > 0 ? 
+          {
+              listTask.length > 0 ? 
 
-            listTask.map((task,index) => {
-              return (
-                  <div className={styles.list}  key={task.id}>
-                    <input type="checkbox" checked={task.checked} onChange={(e) => isCheckBoxChecked(e,index)} />
-                    <p>{task.content}</p>
-                    <Trash className={styles.trash} onClick={() => handleDeleteTask(task.id)} />
-                  </div>
-              )
-            })
-          : <EmptyMessage />
-          
-       }
-      </div>
+                listTask.map((task,index) => {
+                  return (
+                      <div className={styles.list}  key={task.id}>
+                        <input 
+                          type="checkbox" 
+                          checked={task.checked} 
+                          onChange={(e) => isCheckBoxChecked(e,index)} 
+                        />
+                        <p>{task.content}</p>
+                        <Trash 
+                          size={20} 
+                          className={styles.trash} 
+                          onClick={() => handleDeleteTask(task.id)} 
+                        />
+                      </div>
+                  )
+                })
+              : <EmptyMessage />
+          }
+
+        </div>
       </>
     )
 }
