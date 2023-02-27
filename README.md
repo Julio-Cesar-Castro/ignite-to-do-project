@@ -28,4 +28,6 @@
 - ``CSS Modules``
 - ``React``
 - ``React Hooks``
+- ``Vite``
+- ``SweetAlert2``
 - ``Phosphor-Icons``
